@@ -9,10 +9,9 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/portada.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/guifi.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/barra_guifi.css" />
-        <script type="text/javascript" src="<?php echo base_path().$directory; ?>/js/jquery.js"></script>
-        <script type="text/javascript" src="<?php echo base_path().$directory; ?>/js/jquery.scrollTo-min.js"></script>
+        <?php print $scripts ?>
         <script type="text/javascript" src="<?php echo base_path().$directory; ?>/js/jquery.scrollShow.js"></script>
-        <script type="text/javascript" src="<?php echo base_path().$directory; ?>/js/jquery.multiSlide.js"></script>
+        <script type="text/javascript" src="<?php echo base_path().$directory; ?>/js/jquery.scrollTo-min.js"></script>
         <script type="text/javascript">
             jQuery(function( $ ){
             //borrowed from jQuery easing plugin
@@ -26,10 +25,6 @@
         <script type="text/javascript">
             // When the document loads do everything inside here ...
             $(document).ready(function(){
-                $('#banner-slider').multiSlide({
-                    images:'.images',
-                    navigators:'.left,.right'
-                });
                 $('#slider1').scrollShow({
                     view:'.view',
                     content:'.images',
@@ -177,36 +172,8 @@
                         </form>
                     </div>
                 </div>
-                <?php //print $node->content['body']['#value']; ?>
-				<?php //print $content ?>
-                <div class="slider" id="banner-slider">
-                	<ul class="images">
-                        <li><img class="primera" src="<?php echo base_path().$directory; ?>/img/slider-910x454/dsc07219_910x454_v2.jpg" alt="" /></li>
-                        <li><img class="no-primera" src="<?php echo base_path().$directory; ?>/img/slider-910x454/20246_910x454_v2.jpg" alt="" /></li>
-                        <li><img class="no-primera" src="<?php echo base_path().$directory; ?>/img/slider-910x454/DSC08889_910x454_v2.jpg" alt="" /></li>
-                    </ul>
-                    <ul class="texts-slider" id="slider0">
-                        <li><a class="left slider-arrow" id="left0" href="#"></a></li>
-                        <li class="view">
-                            <ul class="texts">
-                                <li>
-                                    <h3>La red que hacemos entre todos</h3>
-                                    <p>Descubre porque Guifi es algo más que una red de telecomunicaciones</p>
-                                </li>
-                                <li>
-                                    <h3>Guifi.net, un proyecto para todos</h3>
-                                    <p>Particulares, empresas, administraciones... Han hecho la vida más fácil gracias a Guifi</p>
-                                </li>
-                                <li>
-                                    <h3>Tu también puedes formar parte!</h3>
-                                    <p>Hay muchas maneras de hacer crecer el proyecto, tengas conocimientos técnicos o no</p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a class="right slider-arrow" id="right0" href="#"></a></li>
-                    </ul>
-                </div>
-                <div id="cos">
+                <?php print $embedded_slideshow; //viene del template.php?>
+				<div id="cos">
                     <div id="botons">
                         <a class="capsa boto" id="boto1" href="/que_es">
                             <span class="dins">
