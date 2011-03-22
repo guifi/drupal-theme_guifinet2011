@@ -1,0 +1,244 @@
+body {
+    font-family:sans-serif;
+}
+
+#pagina,#wrapper {
+    display:block;
+	width:935px;  /*935px = 910px +25px per la home ample fixe, 97% per la resta de planes*/
+    margin:0 auto;
+    background-image:url(../img/tiles/shadow-bg-izq2.png);
+    background-position:top left;
+    padding:0 0 0 25px; /* els 25px es la mida de la imatge degradada de limit *//*aquest padding es per si s'utilitza la imatge de fons, sino, s'ha de comentar*/
+	text-align:left;
+}
+
+#pagina,#principal,#wrapper, #container {
+    background-repeat:repeat-y;
+}
+
+#principal, #container {
+    /*padding:0; aquest padding es per si es fa servir el shadow*/
+    padding:0 25px 0 0; /* els 25px es la mida de la imatge degradada de limit */
+    background-image:url(../img/tiles/shadow-bg-der2.png);
+    background-position:top right;
+    /*box-shadow:5px 0px 20px #5F5F5F,-5px 0px 20px #5F5F5F;
+	-moz-box-shadow:5px 0px 20px #5F5F5F,-5px 0px 20px #5F5F5F;
+	-webkit-box-shadow:5px 0px 20px #5F5F5F,-5px 0px 20px #5F5F5F;*/ /*filtres per afegir les dos barres de degradat a banda i banda de la caixa*/
+	/*filter:
+		progid:DXImageTransform.Microsoft.Shadow(color='#929292', Direction=270, Strength=15)
+		progid:DXImageTransform.Microsoft.Shadow(color='#929292', Direction=90, Strength=15);
+	-ms-filter:
+	   "progid:DXImageTransform.Microsoft.Shadow(color='#929292', Direction=270, Strength=15)
+		progid:DXImageTransform.Microsoft.Shadow(color='#929292', Direction=90, Strength=15)";*/
+}
+
+/* capçalera */
+
+#header {
+    height:89px;
+    z-index: 5;
+    background:transparent url(../img/tiles/banner-bg.png) repeat left top;
+	position:relative;
+}
+
+#header a {
+    text-decoration:none;
+}
+
+#header h1, #header h2 {
+    margin:0;
+}
+
+#header h2 {
+    float:left;
+    padding-top:13px;
+    padding-left:71px;
+}
+
+/* final capçalera */
+
+a {
+    color:#F30;
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration:underline;
+}
+
+#logo {
+    float:left;
+    width:225px;
+    height:65px;
+    padding-top:12px;
+    padding-left:57px;
+    margin:0;
+}
+
+#logo img {
+    border:none;
+}
+
+#slogan {
+    font-size:20px;
+    line-height:140%;
+    font-style:italic;
+    font-weight:normal;
+    text-decoration:none;
+    color:#323232;
+}
+
+/* inici caixa cerca i idioma */
+#eines{
+    position:absolute;
+	top:3px;
+	right:3px;
+	/*float: right;
+	margin-top:3px;
+	margin-right:3px;*/
+    width:155px;
+}
+#search-theme-form, #llengua{
+    margin:0px;
+}
+input {
+    float:left;/* toDo: trobar alternativa a aquesta propietat per esborrar-la */
+}
+#edit-search-theme-form-1{
+    background-color:#ffffff;
+    color:#666666;
+    margin:0;
+    border: none;
+    border: 1px solid;
+    border-color: #3F3F3F #FFFFFF #929292 #3F3F3F;
+    border-right:none;
+    height:15px;
+    width: 125px;
+}
+#searchguifi{
+    margin:0;
+    border: none;
+    border: 1px solid;
+    border-color: #3F3F3F #929292 #929292 #FFFFFF;
+    border-left:none;
+    height:19px;
+    width:25px;
+    background: #ffffff url('../img/cercar21.gif') no-repeat 0px 0px;
+    cursor:pointer;
+    text-indent: -9999px;
+}
+#searchguifi:hover{
+    background: #ffffff url('../img/cercar21.gif') no-repeat 0px -19px;
+}
+
+#llengua select,#llengua label{
+    font-size:11px;
+    color: #666666;
+}
+#llengua{
+    margin-top:5px;
+    text-align:right;
+}
+#llengua select{
+    width:90px;
+    /*float:right;*/
+}
+/* final caixa cerca i idioma */
+
+#peu {
+    background-color:#AAA;
+    border-top:1px solid #AAA;
+    padding:33px 59px 20px;
+    /*width:792px; no hay diferencia entre aplicar o no*/
+	.overflow:auto;
+}
+
+#peu .columna {
+    display:inline-block;
+    vertical-align:top;
+	margin: 0 0 0 2%;
+    width:23%;
+    padding:0;
+	.float:left;
+}
+#peu .columna:first-child {
+	margin-left: 0;
+}
+
+#peu ul {
+	margin:0;
+	padding: 0;
+}
+#peu ul li {
+    list-style-type:none;
+}
+
+.titolpeu,#peu a {
+    display:block;
+    width:100%;
+    line-height:125%;
+    padding-top:4px;
+    font-size:12px;
+    border-bottom:1px dotted #333;
+}
+
+.titolpeu {
+    color:#FFF;
+    font-weight:700;
+    padding-bottom:4px;
+}
+
+#peu a {
+    padding-bottom:2px;
+    color:#333;
+    text-decoration:none;
+}
+
+#peu a:hover {
+    color:#000;
+    border-bottom:1px solid #333;
+}
+
+#sotapeu {
+    background-color:#CECECE;
+    text-align:center;
+    padding:5px;
+    font-size:12px;
+    color:#333;
+}
+#sotapeu a{
+    color:#333;
+    text-decoration:none;
+}
+#sotapeu a:hover {
+    color:#000;
+    border-bottom:1px solid #333;
+}
+#sotapeu a img{
+    vertical-align:text-bottom;
+}
+/* particular estil pel llistats de post de blogs externs */
+
+.view-recull-blogs li{
+	margin-bottom: 10px;
+	width: 90%;
+	overflow: auto;
+}
+.view-recull-blogs .title-1{
+	float: left;
+	width: 20%;
+	background: url("http://planet.guifi.net/img/bubble/nipple.png") no-repeat scroll right top transparent;
+	height: 60px;
+	margin-top: 25px;
+	z-index: 7;
+	position: relative;
+}
+.view-recull-blogs .title{
+	float: left;
+	width: 78%;
+	border: 2px solid rgb(198, 198, 198);
+	margin-left: -2px;
+	z-index: 5;
+	position: relative;
+	padding: 5px;
+}

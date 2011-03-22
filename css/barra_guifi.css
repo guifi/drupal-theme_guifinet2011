@@ -1,0 +1,170 @@
+/* guifi strip */
+
+#guifi-sites {
+	list-style: none;
+	background: #2E3436 url(../img/tiles/sites-bg.png) 0 100% repeat-x;
+	text-align: right;
+	padding: 0 1ex;
+	font-size: 70%;
+}
+
+#guifi-sites .leftnav {
+	float: left;
+	background: url(../img/tiles/sites-sp.png) 100% 0 no-repeat;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+#guifi-sites .home {
+	float: left;
+	background: url(../img/guifi_favicon.jpg) 7px 50% no-repeat;
+	margin-left: 0;
+	padding-left: 27px;
+}
+
+#guifi-sites ul {
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+#guifi-sites li {
+	display: inline;
+	position:relative; /* afegit per posicionar submenus */
+	background: url(../img/tiles/sites-sp.png) 0 0 no-repeat;
+	padding-top: 10px;
+	padding-bottom: 8px;
+	margin-left: 0px;
+	margin-top: 0px;
+	z-index:6; /* sense aixo es perd el submenu en navegar pel subnivell */
+}
+
+#guifi-sites li a {
+	display:inline;
+	font-weight: bold;
+	color: #FFFFFF;
+	margin: 0 2ex;
+	text-decoration: none;
+	line-height: 30px;
+}
+
+#guifi-sites li a:hover {
+	text-decoration: underline
+}
+
+#guifi-sites li.expanded ul{
+	position: absolute;
+	top: 30px;
+	left: 1px;
+	display: none;
+	background: #0E0E0F;
+	/*padding: 10px 0;*/
+	z-index:5;
+}
+
+#guifi-sites li.expanded:hover ul {
+	display: block;
+	background-color: #0E0E0F;
+}
+
+#guifi-sites li.expanded ul li {
+	background: #0E0E0F;
+	display:block;
+	text-align:left;
+	border-top: 1px dotted grey;
+	padding: 0;
+	width:160px;
+}
+
+#guifi-sites li.expanded ul li:first-child{
+	border-top: none;
+}
+
+#topnav a.signin, #topnav a.signin:hover {
+    *background-position:0 3px!important;
+}
+
+a.signin {
+    position:relative;
+    margin-left:3px;
+    background-image:url("../img/toggle_down_light.png");
+    background-repeat:no-repeat;
+    background-position:100% 50%;
+    padding:4px 19px 6px 0;
+}
+
+/*caja*/
+#signin_menu {
+	border-top:1px solid #BBB;
+    border-right:1px solid #888;
+    border-bottom:1px solid #888;
+    border-left:1px solid #BBB;
+    box-shadow:5px 6px 20px #5F5F5F;
+    -webkit-box-shadow:5px 6px 20px #5F5F5F;
+    -moz-box-shadow:5px 6px 20px #5F5F5F;
+    filter:progid:DXImageTransform.Microsoft.dropShadow(color=#5F5F5F,offX=5,offY=6,positive=true);
+    display:none;
+	background-color:#ffffff;
+	position:absolute;
+	width:220px;
+	z-index:100;
+	border:1px transparent;
+	text-align:left;
+	padding:12px;
+	top: 25px; 
+	right: 15px; 
+	margin-top:5px;
+	margin-right: 0px;
+	*margin-right: -1px;
+	color:#789;
+	font-size:11px;
+}
+
+#signin_menu input[type=text], #signin_menu input[type=password] {
+	display:block;
+	/*-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border:1px solid #ACE;*/
+	font-size:11px;
+	margin:0 0 5px;
+	padding:3px;
+	width:203px;
+}
+#signin_menu p {
+	margin:0;
+}
+/*#signin_menu a {
+	color:#6AC;
+}*/
+#signin_menu label {
+	font-weight:normal;
+}
+#signin_menu p.remember {
+	padding:10px 0;
+}
+#signin_menu p.forgot {
+	clear:both;
+	margin:5px 0;
+}
+#signin_menu p a {
+	/*color:#F73300!important;*/
+	padding-right:16px;
+}
+/*#signin_menu p a:hover {
+	background:url(../img/fletxa-petita.png) no-repeat right center;
+} */  
+#signin_submit {
+	background:#666;
+	border:1px solid #666;
+	color:#fff;
+	padding:3px 10px 3px;
+	font-size:11px;
+	margin:0 5px 0 0;
+}
+
+#signin_submit:hover, #signin_submit:focus {
+	background-position:0 -5px;
+	cursor:pointer;
+}
+
+/* fi estils sliding login */

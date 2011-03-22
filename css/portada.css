@@ -1,0 +1,523 @@
+body {
+    background-color:#D3D3D3;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+
+a.vincle, .more-link a{
+    display:block;
+    text-align:right;
+    font-style:italic;
+    font-size:14px;
+    text-decoration:none;
+    background:url(../img/arrow2.gif) no-repeat right center;
+    padding-right:16px;
+}
+
+a.vincle:hover, .more-link a:hover {
+    text-decoration:underline;
+    /*background:url(../img/fletxa-petita.png) no-repeat right center;*/
+}
+
+.gran {
+    font-size:150%;
+}
+
+/* inici slider */
+#banner-slider {
+    z-index:1;
+    position:relative;
+    width:910px;
+    height:454px;
+	/*margin: 0 auto; original */
+	margin: -89px auto 0 auto;
+}
+#banner-slider img {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:3
+}
+
+ul.images {
+    margin-top:0
+}
+
+#banner-slider img.no-primera {
+    z-index:1
+}
+
+#banner-slider ul.texts li {
+    display:inline-block;
+    margin:0;
+    padding:0 40px;
+    width:827px;
+    list-style-type:none;
+    .float:left
+}
+
+#slider0 {
+    position:absolute;
+    bottom:0;
+    margin:0;
+    padding:0;
+    width:910px;
+    overflow:hidden;
+    z-index:4;
+}
+
+#slider0 .texts {
+    width:2730px;
+    margin:0;
+    padding:0 0 27px;
+    background-color:rgba(255,255,255,0.55);
+    .background-color:#ECECEC;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75);/* filtro para ie7*/
+	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75);/* filtro para ie8*/
+}
+
+#banner-slider h3 {
+    font-size:28px;
+    font-weight:400;
+    margin-top:13px;
+    margin-bottom:0
+}
+
+#banner-slider p {
+    font-size:16px;
+    margin-top:0;
+    color:#323232;
+    text-align:center
+}
+
+/* fi slider */
+
+/* nou slider */
+.views-admin-links{
+	display:none;
+}
+.view-homeslideshow{
+    z-index:1;
+    position:relative;
+    width:910px;
+    height:454px;
+	margin: -89px auto 0 auto;
+}
+.view-homeslideshow img {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:3
+}
+
+.sloganfoto {
+    position:absolute;
+	display:block;
+	top:344px;
+    margin:0;
+    padding: 0;
+    width:910px;
+	height: 110px;
+    overflow:hidden;
+    z-index:4;
+    background-color:rgba(255,255,255,0.55);
+    .background-color:#ECECEC;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75);/* filtro para ie7*/
+	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75);/* filtro para ie8*/
+}
+.sloganfoto h3 {
+    font-size:28px;
+    font-weight:400;
+    margin:13px 40px 0 40px;
+}
+
+.sloganfoto p {
+    font-size:16px;
+    margin:0 40px 27px 40px;
+    color:#323232;
+    text-align:center
+}
+
+/* botones slideshow */
+#views_slideshow_singleframe_prev_homeslideshow-block_1, #views_slideshow_singleframe_next_homeslideshow-block_1{
+    width:12px;
+    height:0px;
+    padding-top:29px;
+	position:absolute;
+	bottom:63px;
+	overflow:hidden;
+	z-index:5;
+}
+#views_slideshow_singleframe_prev_homeslideshow-block_1 {
+  background-image:url(../img/esquerra.png);
+  left:10px;
+}
+#views_slideshow_singleframe_next_homeslideshow-block_1 {
+  background-image:url(../img/dreta.png);
+  right:10px;
+}
+#views_slideshow_singleframe_playpause_homeslideshow-block_1 {
+  display:none;
+}
+/* fin botones slideshow */
+
+/* fi nou slider */
+
+#cos {
+    background-color:#CFCFCF;
+    padding:0 21px;
+}
+
+.capsa {
+    position: relative;
+    margin-top:10px;
+    margin-bottom:20px;
+    border-top:1px solid #BBB;
+    border-right:1px solid #888;
+    border-bottom:1px solid #888;
+    border-left:1px solid #BBB;
+    box-shadow:5px 6px 20px #5F5F5F;
+    -webkit-box-shadow:5px 6px 20px #5F5F5F;
+    -moz-box-shadow:5px 6px 20px #5F5F5F;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color='#5F5F5F', Direction=145, Strength=5);
+	-ms-filter:progid:DXImageTransform.Microsoft.Shadow(color='#5F5F5F', Direction=145, Strength=5);
+    background:#FFF;
+}
+
+.texts-slider > li, #slider1 li {
+    float:left;
+    list-style:none;
+}
+
+/* els 3 botons */
+
+#botons {
+    margin: -27px auto 20px auto;
+    /*margin: -27px 0 20px;*/
+    height:172px;
+	width:870px;/*estudiar bé el número als diferents navegadors*/
+}
+
+#botons .boto {
+    float:left;
+    width:274px;
+    height:170px;
+    margin:0;
+    padding:0;
+    z-index:5;
+    background:#FFF url(../img/tiles/botons-bg.png) repeat-x bottom left;
+}
+
+#botons .boto:hover {
+    background:#FFF;
+}
+
+#botons #boto2 {
+    margin:0 20px;
+    .margin:0 12px; /* hack para ie7*/
+}
+
+#botons a {
+    text-decoration: none;
+}
+
+#botons .boto .dins {
+    float:left;
+    width:274px;
+    height:170px;
+    background-color:transparent;
+    background-image:url(../img/botons.png);
+}
+
+#boto1 .dins {
+    background-position: bottom left;
+}
+
+#boto2 .dins {
+    background-position: -297px bottom;
+}
+
+#boto3 .dins {
+    background-position: -594px bottom;
+}
+
+.capsa.boto h3 {
+    margin:17px 0 23px 15px;
+    font-size:28px;
+    font-style:italic;
+    color:#F30;
+    font-weight:normal;
+}
+
+.text-boto {
+    font-size:16px;
+    font-style:italic;
+    color:#323232;
+    margin-left:15px;
+}
+
+a:hover .text-boto {
+    color:#000;
+}
+
+#botons .fletxa {
+    display:none;
+    width:74px;
+    height:44px;
+    position: absolute;
+    bottom:13px;
+    left: 182px;
+    background:transparent url(../img/fletxa-gran.png) no-repeat top left;
+}
+
+#botons a:hover .fletxa {
+    display:block;
+}
+
+/* final dels 3 botons */
+
+/* capsa central */
+
+#central {
+    padding:15px;
+	min-height:210px;
+}
+
+/* caixa central amb pestanyes */
+.tabbed_area {
+    width: 580px;
+    background-color:#E5E5E5;  
+    padding:8px;
+    margin:0px;
+}  
+ul.tabs {
+    margin:5px 0 7px 0;
+    padding:0 0 0 5px;
+}
+ul.tabs li {
+    list-style:none;
+    display:inline;
+}
+ul.tabs li a {
+    background-color:#464c54;
+    color: #FFFFFF;
+    padding:8px 14px 8px 14px;
+    text-decoration:none;
+    font-size:9px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    text-transform:uppercase;
+    border:1px solid #464c54;
+    -moz-border-radius-topright:4px;
+    -moz-border-radius-topleft:4px;
+    -webkit-border-top-right-radius:4px;
+    -webkit-border-top-left-radius:4px;
+    -border-top-right-radius:4px;
+    -border-top-left-radius:4px;
+}
+ul.tabs li a:hover {
+    background-color:#2f343a;
+    border-color:#2f343a;
+}
+ul.tabs li a.active {
+    background-color:#ffffff;
+    color:#FF3300;
+    border:1px solid #464c54;
+    border-bottom: 1px solid #ffffff;
+}
+.content {
+    /*width: 580px; por si se quiere quitar el div tab_area*/
+    background:#fff url(../img/tiles/botons-bg.png) repeat-x bottom;
+    padding:10px;
+    border:1px solid #464c54;
+}
+#content_2, #content_3, #content_4 { display:none; }
+.content ul{
+    list-style-image: url(../img/arrow2.gif);
+}
+.content li, .content p{
+    font-size:12px;
+    margin:3px 0 3px 0;
+}
+
+.content a.rsswidget, .forum a, #content_3 a, #content_4 a{
+    color:#333;
+}
+
+.data-noticia, .views-field-created {
+    color:#666;
+}
+
+#content_3 ul.links, #content_4 ul.links, #user-login .description{
+    display:none;
+}
+
+/* estils de barra nodes operatius comentada al codi de la plana */
+#nodesoperatius{
+    position: relative; /* IE is dumb */
+    display: block;                 
+    float: left;     
+    width: 540px; 
+    height: 20px; 
+    margin: 0 0 15px 0; 
+    background:#fff url(../img/bgnodes_operatius.gif) repeat-y top;
+    padding:0;
+}
+#nodesoperatius div{
+    position: relative;
+    float:left; 
+    height: 20px; 
+    width: 75%; 
+    text-align:right;
+}
+#nodesoperatius div span{
+    position: absolute; 
+    right: -5px; 
+    top: -2px; 
+    display: block; 
+    background: url(../img/marcador.gif) no-repeat right top; 
+    height: 50px; 
+    width: 100%; 
+    text-align: center; 
+    overflow: hidden;
+    font-size:12px;
+    line-height:24px;
+}
+/* fi estils de barra nodes operatius comentada al codi de la plana */
+
+/* fi caixa central amb pestanyes */
+
+.quadre {
+    margin:15px;
+    padding:5px;
+}
+
+.gris {
+    background:#E5E5E5;
+}
+
+.blanc {
+    background:#FFF;
+}
+
+.capsa h3 {
+    margin:0 0 5px;
+    font-size:21px;
+    font-weight:normal;
+    color:#333;
+}
+
+#apadrinaments,#fundacio {
+    position:absolute;
+    right:0;
+    width:210px;
+}
+
+#fundacio {
+    top:0px;
+    height:80px;
+}
+#apadrinaments {
+    top:110px;
+}
+#apadrinaments p{
+    font-size:11px;
+    color:#6F6F6F;
+    margin: 0pt 0pt 5px;	
+}
+.graph {
+    position: relative; /* IE is dumb */
+    width: 200px; 
+    border: 1px solid #FF8A00; 
+    padding: 1px;
+    margin-bottom:3px;
+}
+.graph .bar { 
+    display: block;
+    position: relative;
+    background: #FF8A00; 
+    text-align: center; 
+    color: #333; 
+    height: 10px; 
+    line-height: 10px;
+    font-size:11px;            
+}
+
+.titular {
+    color:#F30;
+    font-size:12px;
+}
+
+/* final capsa central */
+ 
+#patrocinadors {
+    padding:15px 22px;
+    background:#FFF;
+    z-index:20;
+}
+
+#patrocinadors p {
+    margin:5px 0;
+}
+
+/* Inici Slideshow patrocinadors */
+#slider1 {
+    height:60px;
+    padding:0;
+    margin-left:13px;
+}
+
+#slider1 .jq-ss-crop {
+    margin:5px;
+    text-align:center;
+    float:left;
+}
+
+.slider-arrow {
+    width:12px;
+    height:29px;
+    margin-top:5px;
+    display:block;
+}
+
+#slider0 .slider-arrow {
+    position:absolute;
+    bottom:63px
+}
+
+#slider0 .left.slider-arrow {
+    left:10px;
+	top:10px;
+}
+
+#slider0 .right.slider-arrow {
+    right:10px;
+	top:10px;
+}
+
+.left.slider-arrow {
+    background-image:url(../img/esquerra.png)
+}
+
+.right.slider-arrow {
+    background-image:url(../img/dreta.png)
+}
+
+#slider1 .view {
+    margin:0 20px;
+    width:90%;
+    height:60px;
+    overflow:hidden;
+}
+
+#slider1 .images {
+    width:3818px!important;
+    padding:0;
+}
+
+#slider1 .images li img {
+    border:0;
+}
+/* final slideshow patrocinadors */
+
