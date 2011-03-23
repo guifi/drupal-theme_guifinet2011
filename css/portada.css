@@ -197,6 +197,7 @@ ul.images {
     /*margin: -27px 0 20px;*/
     height:172px;
 	width:870px;/*estudiar bé el número als diferents navegadors*/
+	clear: both;
 }
 
 #botons .boto {
@@ -224,37 +225,40 @@ ul.images {
 
 #botons .boto .dins {
     float:left;
-    width:274px;
-    height:170px;
-    background-color:transparent;
-    background-image:url(../img/botons.png);
+    width:244px; /*width:274px;*/
+    height:140px; /*height:170px;*/
+    background: transparent url(../img/botons.png) no-repeat 0 bottom;
+	padding: 15px;
 }
 
 #boto1 .dins {
-    background-position: bottom left;
+    background-position: bottom left !important;
 }
 
 #boto2 .dins {
-    background-position: -297px bottom;
+    background-position: -297px bottom !important;
 }
 
 #boto3 .dins {
-    background-position: -594px bottom;
+    background-position: -594px bottom !important;
 }
 
 .capsa.boto h3 {
-    margin:17px 0 23px 15px;
+    /* margin:17px 0 23px 15px;*/
     font-size:28px;
     font-style:italic;
     color:#F30;
     font-weight:normal;
+	display:inline;
+	background: url("../img/arrow2.gif") no-repeat scroll right 15px;
+	padding-right: 15px;
 }
 
 .text-boto {
     font-size:16px;
     font-style:italic;
     color:#323232;
-    margin-left:15px;
+    /*margin-left:15px;*/
 }
 
 a:hover .text-boto {

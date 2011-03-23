@@ -174,29 +174,13 @@
                 </div>
                 <?php print $embedded_slideshow; //viene del template.php?>
 				<div id="cos">
-                    <div id="botons">
-                        <a class="capsa boto" id="boto1" href="/que_es">
-                            <span class="dins">
-                                <h3 class="titol-boto">Què és Guifi.net? <img src="<?php echo base_path().$directory; ?>/img/arrow2.gif" width="10" height="10" border="0" alt="" /></h3>
-                                <p class="text-boto">Una xarxa de<br />telecomunicacions que<br />uneix persones</p>
-                                <div class="fletxa"></div>
-                            </span>
-                        </a>
-                        <a class="capsa boto" id="boto2" href="/node/35492">
-                            <span class="dins">
-                                <h3 class="titol-boto">Experiències <img src="<?php echo base_path().$directory; ?>/img/arrow2.gif" width="10" height="10" border="0" alt="" /></h3>
-                                <p class="text-boto">Com utilitzen guifi.net<br />els particulars, empreses,<br />administracions i universitats...</p>
-                                <div class="fletxa"></div>
-                            </span>
-                        </a>
-                        <a class="capsa boto" id="boto3" href="/participa">
-                            <span class="dins">
-                                <h3 class="titol-boto">Participa-hi! <img src="<?php echo base_path().$directory; ?>/img/arrow2.gif" width="10" height="10" border="0" alt="" /></h3>
-                                <p class="text-boto">Descobreix com pots formar<br />part de Guifi, com connectar-te,<br />com col·laborar,...</p>
-                                <div class="fletxa"></div>
-                            </span>
-                        </a>
-                    </div>
+                    <?php
+                    	if (arg(2) == 'edit' || arg(2) == 'translate'){
+							print $content;
+						} else {
+							print $node->content['body']['#value'];
+						}
+					?>
                     <div class="capsa" id="central">
                         <div class="tabbed_area capsa">
                             <ul class="tabs">
@@ -250,19 +234,20 @@
                         </div>
                     </div>
                     <div class="capsa" id="patrocinadors">
-                        <h3>Hi donen suport</h3>
+                        <!--<h3>Hi donen suport</h3>-->
                         <ul class="slider" id="slider1">
                             <li><a class="left slider-arrow" id="left1" href="#"></a></li>
                             <li class="view">
+                                <?php
+									//$block = module_invoke('views', 'block', 'view', 'logoshome-block_1');
+									//print $block['content'];
+								?>
                                 <ul class="images">
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/logo_generico.jpg" width="130" height="40" alt="Logo entitat col.laboradora" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/logo_generico2.gif" width="130" height="40" alt="Logo entitat col.laboradora" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/consell1.png" width="97" height="27" alt="Logo entitat col.laboradora" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/logo_generico2.jpg" width="130" height="40" alt="Logo entitat col.laboradora" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/consell1.png" width="97" height="27" alt="Logo entitat col.laboradora" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/logo.jpg" width="40" height="40" alt="Logo entitat col.laboradora" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/logo_generico.jpg" width="130" height="40" alt="Logo entitat col.laboradora" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/consell1.png" width="97" height="27" alt="Logo entitat col.laboradora" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/RIPE.jpg" width="135" height="43" alt="Miembros de RIPE NCC member" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/EULivingLabs.png" width="50" height="50" alt="European Network of Living Labs" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/openspectrum.png" width="141" height="45" alt="Openspectrum.eu" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/CATNIX_mini.jpg" width="75" height="45" alt="Miembros del Catnix" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/premis_nacionals.gif" width="135" height="39" alt="Premi nacional de Telecomunicacions 2007 concedit a Guifi.net" /></li>
                                 </ul>
                             </li>
                             <li><a class="right slider-arrow" id="right1" href="#"></a></li>
