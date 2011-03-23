@@ -172,7 +172,7 @@
                         </form>
                     </div>
                 </div>
-                <?php print $embedded_slideshow; //viene del template.php?>
+                <?php print $embedded_slideshow; //viene del template.php ?>
 				<div id="cos">
                     <?php
                     	if (arg(2) == 'edit' || arg(2) == 'translate'){
@@ -243,11 +243,11 @@
 									//print $block['content'];
 								?>
                                 <ul class="images">
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/RIPE.jpg" width="135" height="43" alt="Miembros de RIPE NCC member" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/RIPE.jpg" width="135" height="43" alt="Membres de RIPE NCC member" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/EULivingLabs.png" width="50" height="50" alt="European Network of Living Labs" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/openspectrum.png" width="141" height="45" alt="Openspectrum.eu" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/CATNIX_mini.jpg" width="75" height="45" alt="Miembros del Catnix" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/premis_nacionals.gif" width="135" height="39" alt="Premi nacional de Telecomunicacions 2007 concedit a Guifi.net" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/CATNIX_mini.jpg" width="75" height="45" alt="Membres del Catnix" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/premis_nacionals.gif" width="135" height="39" alt="Premi Nacional de Telecomunicacions 2007 concedit a Guifi.net" /></li>
                                 </ul>
                             </li>
                             <li><a class="right slider-arrow" id="right1" href="#"></a></li>
