@@ -63,9 +63,9 @@ function phptemplate_preprocess_page(&$vars) {
   if (module_exists('color')) {
     _color_page_alter($vars);
   }
-  // Render the view.
+  // Render the slideshow view for homepage
   $vars['embedded_slideshow'] = views_embed_view('homeslideshow', 'block_1');
-  //Reload the javascript into the scripts.
+  //Reload the javascript into the scripts due to a problem with slideshow.
   $vars['scripts'] = drupal_get_js();
 }
 
@@ -177,10 +177,8 @@ function phptemplate_get_ie_styles() {
 
 /**
  * el nou disseny de la web utilitza les seguents funcions
- * creades per Fernando Graells basades en post i forums de drupal
+ * creades per Fernando Graells basades en posts i forums de drupal
  */
-
-
 
 function draw_language_selection() {
 	// this is copy&paste from locale_block in locale.module

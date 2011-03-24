@@ -187,7 +187,7 @@
                                 <li><a href="#" title="content_1" class="tab active" >Guifi.net Hoy</a></li>
                                 <li><a href="#" title="content_2" class="tab">Servicios</a></li>
                                 <li><a href="#" title="content_3" class="tab">Actualidad en guifi.net</a></li>
-                                <li><a href="#" title="content_4" class="tab">Nuevo en los forums</a></li>
+                                <li><a href="#" title="content_4" class="tab">Nuevo en los foros</a></li>
                                 <!--<li><a href="#" title="content_4" class="tab">Agenda</a></li>-->
                             </ul>
                             <div id="content_1" class="content">

@@ -114,13 +114,13 @@
     <body>
         <div id="guifi-sites">
             <ul id="topnav" class="topnav">
-                <li class="leftnav"><a href="<?php print base_path() ?>" class="home" title="Inici">Inici</a></li>
+                <li class="leftnav"><a href="<?php print base_path() ?>" class="home" title="Inici"><img src="<?php echo base_path().$directory; ?>/img/guifi_favicon.jpg" height="16" width="16" border="0" alt="Guifi.net" align="middle"/></a></li>
                 <li class="leftnav"><a href="/portada">Antiga portada</a></li>
                 <?php
 					global $user;
 					if ($user->uid) {
 				?>
-                <li class="leftnav expanded"><a href="#">El meu compte</a>
+          <li class="leftnav expanded"><a href="#">El meu compte</a>
                 	<ul>
                     	<li><a href="/user/<?php print $user->uid; ?>">El meu perfil</a></li>
                         <li><a href="/meus-nodes/<?php print $user->uid; ?>">Els meus nodes</a></li>
@@ -181,16 +181,39 @@
 							print $node->content['body']['#value'];
 						}
 					?>
+                    <?php
+						$destacat = module_invoke('views', 'block', 'view', 'destacataHome-block_1');
+						$destacatok = 0;
+						if ($destacat) {
+							$destacatok = 1;
+							$tabcontent1 = "";
+						} else {
+							$tabcontent1 = " active";
+						}
+						//print $destacat['content'].$destacatok;
+					?>
                     <div class="capsa" id="central">
                         <div class="tabbed_area capsa">
                             <ul class="tabs">
-                                <li><a href="#" title="content_1" class="tab active" >Guifi.net Avui</a></li>
+                            	<?php
+                                	if ($destacatok == 1){
+										print '<li><a href="#" title="content_0" class="tab active" >Destacat</a></li>';
+									}
+								?>
+                                <li><a href="#" title="content_1" class="tab<?php print $tabcontent1; ?>" >Guifi.net Avui</a></li>
                                 <li><a href="#" title="content_2" class="tab">Serveis</a></li>
                                 <li><a href="#" title="content_3" class="tab">Actualitat a guifi.net</a></li>
                                 <li><a href="#" title="content_4" class="tab">Nou als forums</a></li>
                                 <!--<li><a href="#" title="content_4" class="tab">Agenda</a></li>-->
                             </ul>
-                            <div id="content_1" class="content">
+                            <?php
+                            	if ($destacatok == 1){
+									print '<div id="content_0" class="content">'.$destacat['content'].'</div>';
+									print '<div id="content_1" class="content" style="display:none;">';
+								} else {
+									print '<div id="content_1" class="content">';
+								}
+							?>
                                 <img src="/guifi/cnml/1/plot" height="150" width="200" style="float:right" alt="creixement de la xarxa"/>
                                 <!-- //http://guifi.net/guifi/stats/chart?id=0&width=200&height=190&title=Nodes operatius -->
                                 <h3 style="width:50%"><span id='total_actius' class="gran">11.177</span> nodes operatius.</h3>

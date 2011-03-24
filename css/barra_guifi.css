@@ -16,10 +16,16 @@
 }
 
 #guifi-sites .home {
-	float: left;
+	/*float: left;
 	background: url(../img/guifi_favicon.jpg) 7px 50% no-repeat;
-	margin-left: 0;
-	padding-left: 27px;
+	padding-left: 27px; 
+	margin-left: 0;*/
+	margin: 7px 8px 7px 3px;
+	display: block;
+}
+
+#guifi-sites .home img {
+	vertical-align: middle;
 }
 
 #guifi-sites ul {
