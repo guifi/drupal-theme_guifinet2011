@@ -147,7 +147,7 @@ ul.images {
 	position:absolute;
 	bottom:63px;
 	overflow:hidden;
-	z-index:5;
+	z-index:30;
 }
 #views_slideshow_singleframe_prev_homeslideshow-block_1 {
   background-image:url(../img/esquerra.png);
