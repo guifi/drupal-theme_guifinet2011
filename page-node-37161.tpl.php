@@ -90,13 +90,25 @@
                     <div class="capsa" id="central">
                         <div class="tabbed_area capsa">
                             <ul class="tabs">
-                                <li><a href="#" title="content_1" class="tab active" >Guifi.net Hoy</a></li>
+                            	<?php
+                                	if ($destacatok == 1){
+										print '<li><a href="#" title="content_0" class="tab active" >Destacado</a></li>';
+									}
+								?>
+                                <li><a href="#" title="content_1" class="tab<?php print $tabcontent1; ?>" >Guifi.net Avui</a></li>
                                 <li><a href="#" title="content_2" class="tab">Servicios</a></li>
                                 <li><a href="#" title="content_3" class="tab">Actualidad en guifi.net</a></li>
                                 <li><a href="#" title="content_4" class="tab">Nuevo en los foros</a></li>
                                 <!--<li><a href="#" title="content_4" class="tab">Agenda</a></li>-->
                             </ul>
-                            <div id="content_1" class="content">
+                            <?php
+                            	if ($destacatok == 1){
+									print '<div id="content_0" class="content">'.$destacat['content'].'</div>';
+									print '<div id="content_1" class="content" style="display:none;">';
+								} else {
+									print '<div id="content_1" class="content">';
+								}
+							?>
                                 <img src="/guifi/cnml/1/plot" height="150" width="200" style="float:right" alt="crecimiento de la red"/>
                                 <!-- //http://guifi.net/guifi/stats/chart?id=0&width=200&height=190&title=Nodes operatius -->
                                 <h3 style="width:50%"><span id='total_actius' class="gran">11.177</span> nodos operativos.</h3>
