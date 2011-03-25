@@ -180,56 +180,44 @@ function phptemplate_get_ie_styles() {
  * creades per Fernando Graells basades en posts i forums de drupal
  */
 
+
+
+/*
+ * Theme function to return dropdown html (based on lang_dropdown.module)
+ */
 function draw_language_selection() {
-	// this is copy&paste from locale_block in locale.module
-  global $language ;
-  $lang_name = $language->language;
+  /* This code is almost from locale.module with a bit of modifications
+   * Instead of themeing it using theme('links') we'll theme our own dropdown
+   */ 
+  global $language;
+  
+  //$path = drupal_is_front_page() ? '<front>' : $_GET['q'];
+  $path = $_GET['q'];
   $languages = language_list('enabled');
-  $links = array();
-  foreach ($languages[1] as $languagelist) {
-    if ($languagelist->language != $lang_name) {
-      $links[$languagelist->language] = array(
-        'href'       => $_GET['q'],
-        'title'      => $languagelist->native,
-        'language'   => $languagelist,
-        'attributes' => array('class' => 'language-link'),
-      );
-    } else {
-      $links[$languagelist->language] = array(
-        'href'       => $_GET['q'],
-        'title'      => $languagelist->native,
-        'language'   => $languagelist,
-        'attributes' => array('class' => 'language-link', 'selected' => 'selected'),
-      );
-    }
+  $options = array();
+  foreach ($languages[1] as $lang_item) {
+    $options[$lang_item->language] = array(
+      'href'       => $path,
+      'title'      => $lang_item->native,
+      'language'   => $lang_item,
+    );
   }
-
-  // this adds the real paths, i.e. if we are on a german page,
-  // the british flag will point to en/english_alias instead of
-  // en/node_with_german_content
-  translation_translation_link_alter($links, $_GET['q']);
-
-  // Or do your own stuff, e.g. set the flags and no lang names,
-  // no matter what the i18n icon settings say.
-  //if ($icon = theme('languageicons_icon', $language, NULL)) {
-  //   $links[$language->language]['title'] = theme('languageicons_place', $link['title'], $icon);
-  //   $links[$language->language]['html'] = TRUE;         
-  //}
-
-
-  // format as you like, e.g.
-  //echo theme('links', $links, array());
+  drupal_alter('translation_link', $options, $path);
   
-  // Go through all language links and print 'em out.
-  foreach ($links as $link) {
-    if ($link['attributes']['selected'] == 'selected') {
-		echo ' <option value="'. $link['href'].'" selected >'.$link['title'].'</option>';
-	} else {
-		echo ' <option value="'. $link['href'].'">'.$link['title'].'</option>';
-	}
+  /* Here we theme our own dropdown */
+  $output = "<select id=\"language-select-list\" name=\"language-select-list\" onchange=\"document.location.href=this.options[this.selectedIndex].value;\">\n";
+  foreach ($options as $lang_option) {
+    if ($language->language == $lang_option['language']->language) {
+      $selected = ' selected="selected"';
+    } else { $selected = ''; }
+    $path = check_url(url($lang_option['href'], array('language' => $lang_option['language'])));
+    $output .= '<option value="' . $path . '"' . $selected . '>' . $lang_option['title'] . '</option>' . "\n";
   }
   
+  $output .= "</select>\n" . $languageicon;
+  print $output;
 }
+
 
 /**
 * Override or insert PHPTemplate variables into the search_theme_form template.
