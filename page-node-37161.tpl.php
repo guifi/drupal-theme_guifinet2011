@@ -43,33 +43,27 @@
                 </li>
 			</ul>
 			<ul class="topnav">
-                <?php
-					//print menu_tree_output(menu_tree_all_data('menu-crear-continguts'));
-					print i18nmenu_translated_tree('menu-crear-continguts');
-				?>
+                <?php print i18nmenu_translated_tree('menu-crear-continguts'); ?>
                 <?php
 					}
 				?>
 			</ul>
-			<?php //print theme('links', menu_navigation_links('menu-barra-guifi'), array('class' => 'links primary-links')); ?>
-			<?php print menu_tree_output(menu_tree_all_data('menu-barra-guifi')); ?>
-			<?php //print menu_tree_output(menu_tree_all_data('navigation')); ?>
-			<?php //print theme('links', $primary_links, array('class' => 'topnav')); ?>
-        		<?php
-					global $user;
-					if (!$user->uid) {
-				?>
+			<?php print i18nmenu_translated_tree('menu-barra-guifi'); ?>
+        	<?php
+				global $user;
+				if (!$user->uid) {
+			?>
 			<ul>
 				<li><a href="#" class="signin" title="Entra"><span>Entra / Regístrate</span></a></li>
 			</ul>
-                <fieldset id="signin_menu">
+            <fieldset id="signin_menu">
 				<?php print drupal_get_form('user_login');?>
-                	<p class="forgot"><a href="/user/register" class="vincle">Regístrate</a></p>
-                    <p class="forgot"><a href="/user/password" id="resend_password_link" class="vincle">Pide una contraseña nueva</a></p>
-				</fieldset>
-				<?php
-				}
-				?>
+                <p class="forgot"><a href="/user/register" class="vincle">Regístrate</a></p>
+                <p class="forgot"><a href="/user/password" id="resend_password_link" class="vincle">Pide una contraseña nueva</a></p>
+			</fieldset>
+			<?php
+			}
+			?>
         </div>
         <div id="pagina">
             <div id="principal">

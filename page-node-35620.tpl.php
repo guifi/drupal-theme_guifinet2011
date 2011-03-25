@@ -43,22 +43,16 @@
                 </li>
 			</ul>
 			<ul class="topnav">
-                <?php
-					//print menu_tree_output(menu_tree_all_data('menu-crear-continguts'));
-					print i18nmenu_translated_tree('menu-crear-continguts');
-				?>
+                <?php print i18nmenu_translated_tree('menu-crear-continguts'); ?>
                 <?php
 					}
 				?>
 			</ul>
-			<?php //print theme('links', menu_navigation_links('menu-barra-guifi'), array('class' => 'links primary-links')); ?>
-			<?php print menu_tree_output(menu_tree_all_data('menu-barra-guifi')); ?>
-			<?php //print menu_tree_output(menu_tree_all_data('navigation')); ?>
-			<?php //print theme('links', $primary_links, array('class' => 'topnav')); ?>
-        		<?php
-					global $user;
-					if (!$user->uid) {
-				?>
+			<?php print i18nmenu_translated_tree('menu-barra-guifi'); ?>
+        	<?php
+				global $user;
+				if (!$user->uid) {
+			?>
 			<ul>
 				<li><a href="#" class="signin" title="Entra"><span>Entra / Registra't</span></a></li>
 			</ul>
@@ -102,7 +96,6 @@
 						} else {
 							$tabcontent1 = " active";
 						}
-						//print $destacat['content'].$destacatok;
 					?>
                     <div class="capsa" id="central">
                         <div class="tabbed_area capsa">
