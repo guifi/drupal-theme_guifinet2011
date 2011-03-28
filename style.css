@@ -304,7 +304,6 @@ table .form-button, table .form-submit {
  * Layout
  */
 #header-region {
-  min-height: 1em;
   background: #d2e6f3 url(images/bg-navigation.png) repeat-x 50% 100%;
 }
 
@@ -355,10 +354,6 @@ table .form-button, table .form-submit {
   margin: 0 auto;
   padding: 0 20px;
   max-width: 1270px;
-}
-
-#wrapper #container #header {
-  height: 10px;
 }
 
 #wrapper #container #header #logo-floater {
