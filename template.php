@@ -135,6 +135,8 @@ function _opensourcery_rebuild_secondary_links() {
 
   return $secondary_links;
 }
+
+
 /**
  * Returns the rendered local tasks. The default implementation renders
  * them as tabs. Overridden to split the secondary tasks.

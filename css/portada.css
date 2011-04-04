@@ -422,6 +422,9 @@ ul.tabs li a.active {
     top:0px;
     height:80px;
 }
+#fundacio p{
+	margin:0;	
+}
 #apadrinaments {
     top:110px;
 }

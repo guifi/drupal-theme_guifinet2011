@@ -28,17 +28,17 @@
         <div id="guifi-sites">
             <ul id="topnav" class="topnav">
                 <li class="leftnav"><a href="<?php print base_path() ?>" class="home" title="Inici"><img src="<?php echo base_path().$directory; ?>/img/guifi_favicon.jpg" height="16" width="16" border="0" alt="Guifi.net" align="middle"/></a></li>
-                <li class="leftnav"><a href="/portada">Antiga portada</a></li>
+                <li class="leftnav"><a href="/portada"><?php echo t('Old Homepage'); ?></a></li>
                 <?php
 					global $user;
 					if ($user->uid) {
 				?>
-          <li class="leftnav expanded"><a href="#">El meu compte</a>
+          <li class="leftnav expanded"><a href="#"><?php echo t('My account'); ?></a>
                 	<ul>
-                    	<li><a href="/user/<?php print $user->uid; ?>">El meu perfil</a></li>
-                        <li><a href="/meus-nodes/<?php print $user->uid; ?>">Els meus nodes</a></li>
-                        <li><a href="/blog/<?php print $user->uid; ?>">El meu blog</a></li>
-                        <li><a href="/user/<?php print $user->uid; ?>/track">Les meves publicacions</a></li>
+                    	<li><a href="/user/<?php print $user->uid; ?>"><?php echo t('My profile'); ?></a></li>
+                        <li><a href="/meus-nodes/<?php print $user->uid; ?>"><?php echo t('My nodes'); ?></a></li>
+                        <li><a href="/blog/<?php print $user->uid; ?>"><?php echo t('My blog'); ?></a></li>
+                        <li><a href="/user/<?php print $user->uid; ?>/track"><?php echo t('My content'); ?></a></li>
                     </ul>                
                 </li>
 			</ul>
@@ -54,12 +54,12 @@
 				if (!$user->uid) {
 			?>
 			<ul>
-				<li><a href="#" class="signin" title="Entra"><span>Entra / Registra't</span></a></li>
+				<li><a href="#" class="signin" title="Entra"><span><?php echo t('Login'); ?> / <?php echo t('Register'); ?></span></a></li>
 			</ul>
                 <fieldset id="signin_menu">
 				<?php print drupal_get_form('user_login');?>
-                	<p class="forgot"><a href="/user/register" class="vincle">Registra't</a></p>
-                    <p class="forgot"><a href="/user/password" id="resend_password_link" class="vincle">Demana una contrasenya nova</a></p>
+                	<p class="forgot"><a href="/user/register" class="vincle"><?php echo t('Register'); ?></a></p>
+                    <p class="forgot"><a href="/user/password" id="resend_password_link" class="vincle"><?php echo t('Request new password'); ?></a></p>
 				</fieldset>
 				<?php
 				}
@@ -69,7 +69,13 @@
             <div id="principal">
 				<div id="header">
                     <h1><a href="<?php print base_path() ?>" title="Guifi.net" id="logo"><img src="<?php echo base_path().$directory; ?>/img/guifi-logo.png" alt="Guifi.net" title="Guifi.net" /></a></h1>
-                    <h2><a href="<?php print base_path() ?>" title="Guifi.net" id="slogan"><?php echo t('Xarxa Oberta, Lliure i Neutral<br />Internet per a Tothom'); ?></a></h2>
+                    <?php
+                    	if ($mission) {
+							print '<h2><a href="'.base_path().'" title="Guifi.net" id="slogan">';
+            				print $mission;
+							print '</a></h2>';
+						}
+					?>
                     <div id="eines">
                     	<?php if ($search_box): ?><?php print $search_box ?><?php endif; ?>
                         <form name="llengua" id="llengua" action="">
@@ -102,13 +108,13 @@
                             <ul class="tabs">
                             	<?php
                                 	if ($destacatok == 1){
-										print '<li><a href="#" title="content_0" class="tab active" >Destacat</a></li>';
+										print '<li><a href="#" title="content_0" class="tab active" >'.t('Highlight').'</a></li>';
 									}
 								?>
-                                <li><a href="#" title="content_1" class="tab<?php print $tabcontent1; ?>" >Guifi.net Avui</a></li>
-                                <li><a href="#" title="content_2" class="tab">Serveis</a></li>
-                                <li><a href="#" title="content_3" class="tab">Actualitat a guifi.net</a></li>
-                                <li><a href="#" title="content_4" class="tab">Nou als forums</a></li>
+                                <li><a href="#" title="content_1" class="tab<?php print $tabcontent1; ?>" >Guifi.net <?php echo t('Today'); ?></a></li>
+                                <li><a href="#" title="content_2" class="tab"><?php echo t('Services'); ?></a></li>
+                                <li><a href="#" title="content_3" class="tab"><?php echo t('Recent posts'); ?></a></li>
+                                <li><a href="#" title="content_4" class="tab"><?php echo t('New forum topics'); ?></a></li>
                                 <!--<li><a href="#" title="content_4" class="tab">Agenda</a></li>-->
                             </ul>
                             <?php
@@ -121,44 +127,44 @@
 							?>
                                 <img src="/guifi/cnml/1/plot" height="150" width="200" style="float:right" alt="creixement de la xarxa"/>
                                 <!-- //http://guifi.net/guifi/stats/chart?id=0&width=200&height=190&title=Nodes operatius -->
-                                <h3 style="width:50%"><span id='total_actius' class="gran">11.177</span> nodes operatius.</h3>
+                                <h3 style="width:50%"><span id='total_actius' class="gran"></span> <?php echo t('working nodes'); ?></h3>
                                 <ul style="width:50%">
-                                	<li><strong id='nombre_total_links'></strong> enllaços</li>
-                                	<li><strong id='km_conexions'></strong> quilòmetres d'enllaços totals</li>
-                                	<li><strong id='nodes_creats_ultima_setmana'></strong> nodes creats última setmana</li>
-                                	<li><strong id='nodes_operatius_ultima_setmana'></strong> nodes passats a operatius l'última setmana</li>
+                                	<li><strong id='nombre_total_links'></strong> <?php echo t('links'); ?></li>
+                                	<li><strong id='km_conexions'></strong> <?php echo t('total kilometers of links'); ?></li>
+                                	<li><strong id='nodes_creats_ultima_setmana'></strong> <?php echo t('last week new nodes'); ?></li>
+                                	<li><strong id='nodes_operatius_ultima_setmana'></strong> <?php echo t('working nodes last week'); ?></li>
                                 </ul>
-                                <p style="clear:both;"><a class="vincle" href="/guifi/menu/stats/nodes">Més dades</a></p>
+                                <p style="clear:both;"><a class="vincle" href="/guifi/menu/stats/nodes"><?php echo t('more info'); ?></a></p>
                             </div>
                             <div id="content_2" class="content">
                                 <ul>
-                                	<li>Nombre total de portes a Internet: <strong id='Adsl'></strong> Portes directes i <strong id='num_proxys'></strong> Proxys</li>
-                                    <li>Centraletes de VeuIP: <strong id='centrals_VoIP'></strong></li>
-                                    <li>Servidors d'arxius: <strong id='fileservers'></strong></li>
-                                    <li>Servidors de Missatgeria instantania: <strong id='IM'></strong> de jabber i <strong id='irc'></strong> de irc</li>
-                                    <li>Servidors de Videoconferència: <strong id='videoconferencia'></strong></li>
-                                    <li>servidors de webs: <strong id='web_servers'></strong></li>
-                                    <li>Emissores de Radio (música): <strong id='radio'></strong></li>
-                                    <li>servidors de correu: <strong id='mail_servers'></strong></li>
+                                	<li><?php echo t('Total internet Gateways'); ?>: <?php echo t('<strong id="Adsl"></strong> Direct Gateways and <strong id="num_proxys"></strong> Proxys'); ?></li>
+                                    <li><?php echo t('VoiceIP Servers'); ?>: <strong id='centrals_VoIP'></strong></li>
+                                    <li><?php echo t('FTP or shared disk server'); ?>: <strong id='fileservers'></strong></li>
+                                    <li><?php echo t('Instant Message Servers'); ?>: <?php echo t('<strong id="IM"></strong> jabber and <strong id="irc"></strong> irc'); ?></li>
+                                    <li><?php echo t('Videoconference Servers'); ?>: <strong id='videoconferencia'></strong></li>
+                                    <li><?php echo t('Web server'); ?>: <strong id='web_servers'></strong></li>
+                                    <li><?php echo t('Radio broadcast'); ?> (<?php echo t('music'); ?>): <strong id='radio'></strong></li>
+                                    <li><?php echo t('Mail server'); ?>: <strong id='mail_servers'></strong></li>
                                 </ul>
-                                <p><a class="vincle" href="/node/3671/view/services">Tots els serveis</a></p>
+                                <p><a class="vincle" href="/node/3671/view/services"><?php echo t('All services'); ?></a></p>
                             </div>
                             <?php print $actualitat_guifi; ?>
                             <?php print $actualitat_foros; ?>
                         </div>
                         <div class="quadre gris capsa" id="fundacio">
-                            <h3>Fundació Guifi.net</h3>
-                            <a class="vincle" href="http://fundacio.guifi.net/">Què és la Fundació?</a>
-                            <a class="vincle" href="http://fundacio.guifi.net/fundacio/02_ami/ami.html">Fes-te amic!</a>
-                            <a class="vincle" href="http://fundacio.guifi.net/fundacio/03_vol/vol.html">Fes-te voluntari!</a>
+                            <h3><?php echo t('Guifi.net Foundation'); ?></h3>
+                            <a class="vincle" href="http://fundacio.guifi.net/"><?php echo t('What is the Foundation?'); ?></a>
+                            <a class="vincle" href="http://fundacio.guifi.net/fundacio/02_ami/ami.html"><?php echo t('Become a friend!'); ?></a>
+                            <a class="vincle" href="http://fundacio.guifi.net/fundacio/03_vol/vol.html"><?php echo t('Become a volunteer!'); ?></a>
                         </div>
                         <div class="quadre blanc" id="apadrinaments">
-                            <h3>Apadrinaments</h3>
-                            <p>El creixement i manteniment de la xarxa es realitza gràcies als apadrinaments</p>
+                            <h3><?php echo t('Sponsorships'); ?></h3>
+                            <p><?php echo t('The netwoork grows and is maintained thanks to sponshorships'); ?></p>
                             <div class="graph">
                                 <strong id='percent_apadrinament' class="bar" style="width: 74%;">74%</strong>
                             </div>
-                            <a class="vincle" href="/budgets/3671/list/Open">Apadrina un node!</a>
+                            <a class="vincle" href="/budgets/3671/list/Open"><?php echo t('Sponsor a node!'); ?></a>
                         </div>
                     </div>
                     <div class="capsa" id="patrocinadors">
@@ -174,21 +180,21 @@
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/RIPE.jpg" width="135" height="43" alt="Membres de RIPE NCC member" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/EULivingLabs.png" width="50" height="50" alt="European Network of Living Labs" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/openspectrum.png" width="141" height="45" alt="Openspectrum.eu" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/CATNIX_mini.jpg" width="75" height="45" alt="Membres del Catnix" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/CATNIX_mini.gif" width="75" height="45" alt="Membres del Catnix" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/premis_nacionals.gif" width="135" height="39" alt="Premi Nacional de Telecomunicacions 2007 concedit a Guifi.net" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/citilab.jpg" width="62" height="47" alt="Citilab Cornella" /></li>
                                 </ul>
                             </li>
                             <li><a class="right slider-arrow" id="right1" href="#"></a></li>
                         </ul>
-                        <p><a href="#" class="vincle">Suports i padrins</a></p>
+                        <!--<p><a href="#" class="vincle">Suports i padrins</a></p>-->
                     </div>
                 </div>
                 <div id="peu" class="quatre columnes" style="margin-top: -40px; z-index: 10">
                     <?php print $sitemap; ?>
                 </div>
                 <div id="sotapeu">
-                	&copy; Guifi.net - <a href="/node/415" title="Avís Legal">Avís Legal</a> - <a href="/node/feed"><img src="/misc/xml.png" alt="xml_logo" width="36" height="14" border="0"/></a>
+                	<?php print $footer_message . $footer ?>
                 </div>
             </div>
         </div>
