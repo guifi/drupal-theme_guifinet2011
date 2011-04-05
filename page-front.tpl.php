@@ -93,6 +93,8 @@
 							print $node->content['body']['#value'];
 						}
 					?>
+                	<?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
+          			<?php if ($tabs): print '<ul class="tabs primary">'. $tabs .'</ul></div>'; endif; ?>
                     <?php
 						$destacat = module_invoke('views', 'block', 'view', 'destacataHome-block_1');
 						$destacatok = 0;
