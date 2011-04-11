@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/portada.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/guifi.css" />
+        <!--<link rel="stylesheet" type="text/css" href="<?php echo base_path(); ?>files/css/css_e7f8949d5cad5eba5a7a0e4cbfe3b106.css" />-->
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/barra_guifi.css" />
         <?php print $scripts ?>
         <script type="text/javascript" src="<?php echo base_path().$directory; ?>/js/jquery.scrollShow.js"></script>
@@ -185,6 +186,9 @@
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/CATNIX_mini.gif" width="75" height="45" alt="Membres del Catnix" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/premis_nacionals.gif" width="135" height="39" alt="Premi Nacional de Telecomunicacions 2007 concedit a Guifi.net" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/citilab.jpg" width="62" height="47" alt="Citilab Cornella" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/fundacio_punt_cat.gif" width="90" height="44" alt="Fundacio Punt.cat" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/hangar_org.gif" width="102" height="43" alt="Fundacio Punt.cat" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/sant_bartomeu_del_grau.gif" width="31" height="45" alt="Ajuntament de Sant Bartomeu del Grau" /></li>
                                 </ul>
                             </li>
                             <li><a class="right slider-arrow" id="right1" href="#"></a></li>

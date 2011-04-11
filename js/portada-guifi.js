@@ -49,7 +49,8 @@
                 });
 				//dades agafat de http://test.guifi.net/guifi/cnml/1/home
                 //$.get('<?php echo base_path().$directory; ?>/home.xml', function(data){
-                $.get('http://test.guifi.net/guifi/cnml/1/home', function(data){
+                $.get('/guifi/cnml/1/home', function(data){
+                //$.get('http://guifi.net/guifi/cnml/1/home', function(data){
                   $('#total_actius').html($(data).find('total_working_nodes').attr('nodes'));
                   $('#nombre_total_links').html($(data).find('total_links').attr('num'));
                   $('#km_conexions').html($(data).find('total_links').attr('kms'));
@@ -57,8 +58,9 @@
                   $('#nodes_operatius_ultima_setmana').html($(data).find('nodes_last_week').attr('working_nodes'));
                 });
 				//serveis agafats de http://test.guifi.net/guifi/cnml/2/home
-                //$.get('<?php echo base_path().$directory; ?>/serveis.xml', function(data){
-                $.get('http://test.guifi.net/guifi/cnml/2/home', function(data){
+                //$.get(Drupal.settings.basePath+'guifi/cnml/2/home', function(data){
+                $.get('/guifi/cnml/2/home', function(data){
+                //$.get('http://guifi.net/guifi/cnml/2/home', function(data){
                   $(data).find('service').each(function(){
 					  var servei = $(this);
 					  if (servei.attr('type') == 'Proxy') $('#num_proxys').html(servei.attr('total'));
@@ -75,7 +77,7 @@
                 });
 				// apadrinaments agafats de http://test.guifi.net/budgets/3671/cnml/short/Open
                 //$.get('<?php echo base_path().$directory; ?>/apadrinaments.xml', function(data){
-                $.get('http://test.guifi.net/budgets/3671/cnml/short/Open', function(data){
+                $.get('/budgets/3671/cnml/short/Open', function(data){
                   var funded = 0;
                   var amount = 0;
 				  $(data).find('budget').each(function(){
