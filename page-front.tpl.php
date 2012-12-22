@@ -10,8 +10,9 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/guifi.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/barra_guifi.css" />
 
-       // UGLY HACK: allow chat and translor in FrontPage.
-       <?php $result = db_query("SELECT s.status FROM {system} s WHERE s.name = '%s' AND s.type = '%s'", 'drupalchat', 'module');
+       <?php
+         // UGLY HACK: allow chat and translor in FrontPage.
+         $result = db_query("SELECT s.status FROM {system} s WHERE s.name = '%s' AND s.type = '%s'", 'drupalchat', 'module');
          while ($row = db_fetch_object($result)) {
            if ($row->status == 1 ) {
             ?>
@@ -28,8 +29,8 @@
             <?php
             }
           }
-        ?>
         // end HACK
+       ?>
 
         <?php print $scripts ?>
         <script type="text/javascript" src="<?php echo base_path().$directory; ?>/js/jquery.scrollShow.js"></script>
@@ -61,7 +62,7 @@
                         <li><a href="/meus-nodes/<?php print $user->uid; ?>"><?php echo t('My nodes'); ?></a></li>
                         <li><a href="/blog/<?php print $user->uid; ?>"><?php echo t('My blog'); ?></a></li>
                         <li><a href="/user/<?php print $user->uid; ?>/track"><?php echo t('My content'); ?></a></li>
-                    </ul>                
+                    </ul>
                 </li>
 			</ul>
 			<ul class="topnav">
