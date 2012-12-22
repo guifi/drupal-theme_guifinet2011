@@ -5,12 +5,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
     <head>
         <title><?php print $head_title ?></title>
-        <?php print $styles ?>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/portada.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/guifi.css" />
-        <!--<link rel="stylesheet" type="text/css" href="<?php echo base_path(); ?>files/css/css_e7f8949d5cad5eba5a7a0e4cbfe3b106.css" />-->
         <link rel="stylesheet" type="text/css" href="<?php echo base_path().$directory; ?>/css/barra_guifi.css" />
+
+       // UGLY HACK: allow chat and translor in FrontPage.
+       <?php $result = db_query("SELECT s.status FROM {system} s WHERE s.name = '%s' AND s.type = '%s'", 'drupalchat', 'module');
+         while ($row = db_fetch_object($result)) {
+           if ($row->status == 1 ) {
+            ?>
+            <link rel="stylesheet" type="text/css" href="<?php echo base_path().drupal_get_path('module', 'drupalchat'); ?>/themes/light/light.css" />
+            <?php
+            }
+          }
+       ?>
+       <?php $result = db_query("SELECT s.status FROM {system} s WHERE s.name = '%s' AND s.type = '%s'", 'l10n_client', 'module');
+         while ($row = db_fetch_object($result)) {
+           if ($row->status == 1 ) {
+            ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_path().drupal_get_path('module', 'l10n_client'); ?>/l10n_client.css" />
+            <?php
+            }
+          }
+        ?>
+        // end HACK
+
         <?php print $scripts ?>
         <script type="text/javascript" src="<?php echo base_path().$directory; ?>/js/jquery.scrollShow.js"></script>
         <script type="text/javascript" src="<?php echo base_path().$directory; ?>/js/jquery.scrollTo-min.js"></script>
