@@ -180,8 +180,8 @@
                         <div class="quadre gris capsa" id="fundacio">
                             <h3><?php echo t('Guifi.net Foundation'); ?></h3>
                             <a class="vincle" href="http://fundacio.guifi.net/"><?php echo t('What is the Foundation?'); ?></a>
-                            <a class="vincle" href="http://fundacio.guifi.net/fundacio/02_ami/ami.html"><?php echo t('Become a friend!'); ?></a>
-                            <a class="vincle" href="http://fundacio.guifi.net/fundacio/03_vol/vol.html"><?php echo t('Become a volunteer!'); ?></a>
+                            <!-- //<a class="vincle" href="http://fundacio.guifi.net/fundacio/02_ami/ami.html"><?php echo t('Become a friend!'); ?></a> -->
+                            <a class="vincle" href="http://blogs.guifi.net/fundacio/guifi-net-voluntariat/"><?php echo t('Become a volunteer!'); ?></a>
                         </div>
                         <div class="quadre blanc" id="apadrinaments">
                             <h3><?php echo t('Sponsorships'); ?></h3>
