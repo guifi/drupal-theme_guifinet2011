@@ -187,7 +187,7 @@
                             <h3><?php echo t('Sponsorships'); ?></h3>
                             <p><?php echo t('The netwoork grows and is maintained thanks to sponshorships'); ?></p>
                             <div class="graph">
-                                <strong id='percent_apadrinament' class="bar" style="width: 74%;">74%</strong>
+                                <strong id='percent_apadrinament' class="bar" style="width: 87%;">87%</strong>
                             </div>
                             <a class="vincle" href="/budgets/3671/list/Open"><?php echo t('Sponsor a node!'); ?></a>
                         </div>
@@ -209,7 +209,7 @@
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/premis_nacionals.gif" width="135" height="39" alt="Premi Nacional de Telecomunicacions 2007 concedit a Guifi.net" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/citilab.jpg" width="62" height="47" alt="Citilab Cornella" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/fundacio_punt_cat.gif" width="90" height="44" alt="Fundacio Punt.cat" /></li>
-                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/hangar_org.gif" width="102" height="43" alt="Fundacio Punt.cat" /></li>
+                                    <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/hangar_org.gif" width="102" height="43" alt="Fundacio AAVC Hangar.org" /></li>
                                     <li><img src="<?php echo base_path().$directory; ?>/img/patrocinadors/sant_bartomeu_del_grau.gif" width="31" height="45" alt="Ajuntament de Sant Bartomeu del Grau" /></li>
                                 </ul>
                             </li>
