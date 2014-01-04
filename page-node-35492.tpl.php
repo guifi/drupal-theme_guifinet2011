@@ -1,5 +1,6 @@
 <?php
 // $Id: page.tpl.php,v 1.18 2008/01/24 09:42:53 goba Exp $
+// És page-front.tpl.php portada nova del theme_guifinet2011
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
@@ -47,7 +48,10 @@
         </script>
         <script type="text/javascript" src="<?php echo base_path().$directory; ?>/js/portada-guifi.js"></script>
     </head>
+
     <body>
+
+<!-- BARRA SUPERIOR -->
         <div id="guifi-sites">
             <ul id="topnav" class="topnav">
                 <li class="leftnav"><a href="<?php print base_path() ?>" class="home" title="Inici"><img src="<?php echo base_path().$directory; ?>/img/guifi_favicon.jpg" height="16" width="16" border="0" alt="Guifi.net" align="middle"/></a></li>
@@ -88,9 +92,16 @@
 				}
 				?>
         </div>
+<!-- FI BARRA SUPERIOR -->
+
+<!-- CONTINGUT -->
         <div id="pagina">
+
+<!-- PRINCIPAL -->
             <div id="principal">
-				<div id="header">
+
+<!-- HEADER -->
+		<div id="header">
                     <h1><a href="<?php print base_path() ?>" title="Guifi.net" id="logo"><img src="<?php echo base_path().$directory; ?>/img/guifi-logo.png" alt="Guifi.net" title="Guifi.net" /></a></h1>
                     <?php
                     	if ($mission) {
@@ -107,30 +118,38 @@
                         </form>
                     </div>
                 </div>
-                <?php print $embedded_slideshow; //viene del template.php ?>
-				<div id="cos">
+<!-- FI HEADER -->
+
+<!-- SLIDESHOW -->
+
+  <div id="cos">
+
+<!-- FI SLIDESHOW -->
+
+<!-- CENTRAL -->
+                  <div class="capsa" id="central">
                     <?php
                     	if (arg(2) == 'edit' || arg(2) == 'translate'){
-							print $content;
-						} else {
-							print $node->content['body']['#value'];
-						}
-					?>
-                	<?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
-          			<?php if ($tabs): print '<ul class="tabs primary">'. $tabs .'</ul></div>'; endif; ?>
+			  print $content;
+			} else {
+			  print $node->content['body']['#value'];
+			}
+		    ?>
+<!--                <?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
+          	    <?php if ($tabs): print '<ul class="tabs primary">'. $tabs .'</ul></div>'; endif; ?>  -->
                     <?php
-						$destacat = module_invoke('views', 'block', 'view', 'destacataHome-block_1');
-						$destacatok = 0;
-						if ($destacat) {
-							$destacatok = 1;
-							$tabcontent1 = "";
-						} else {
-							$tabcontent1 = " active";
-						}
-					?>
+			$destacat = module_invoke('views', 'block', 'view', 'destacataHome-block_1');
+			$destacatok = 0;
+			if ($destacat) {
+			  $destacatok = 1;
+			  $tabcontent1 = "";
+			} else {
+			  $tabcontent1 = " active";
+			}
+		     ?>
+                   </div> <!-- FI CENTRAL -->
 
-
-
+<!-- PATROCINADORS -->
                     <div class="capsa" id="patrocinadors">
                         <!--<h3>Hi donen suport</h3>-->
                         <ul class="slider" id="slider1">
@@ -156,11 +175,11 @@
                         </ul>
                         <!--<p><a href="#" class="vincle">Suports i padrins</a></p>-->
                     </div>
+<!-- FI PATROCINADORS -->
+
                 </div>
 
-
-
-
+<!-- 4 COLUMNES -->
                 <div id="peu" class="quatre columnes" style="margin-top: -40px; z-index: 10">
                     <?php print $sitemap; ?>
                 </div>
@@ -168,7 +187,11 @@
                 	<?php print $footer_message . $footer ?>
                 </div>
             </div>
+<!-- FI 4 COLUMNES -->
+
         </div>
+<!-- FI CONTINGUT -->
+
         <?php print $closure ?>
     </body>
 </html>
